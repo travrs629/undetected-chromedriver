@@ -124,7 +124,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         debug=False,
         no_sandbox=True,
         **kw,
-    ):
+    ): # Explains what the attributes are.
         """
         Creates a new instance of the chrome driver.
 

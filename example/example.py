@@ -18,8 +18,10 @@ def main(args=None):
         )  # so the demo is 'follow-able' instead of some flashes and boom => done. set it how you like
 
     if TAKE_IT_EASY:
+        # Defines sleep as a time.sleep function.
         sleep = time.sleep
     else:
+        # Defines sleep as a lambda - small anonymous function.
         sleep = lambda n: print(
             "we could be sleeping %d seconds here, but we don't" % n
         )
@@ -30,6 +32,7 @@ def main(args=None):
     # accept the terms
     driver.find_elements(By.XPATH, '//*[contains(text(), "Reject all")]')[-1].click()  # ;)
 
+    # Locates the Search box.
     inp_search = driver.find_element(By.XPATH, '//input[@title="Search"]')
 
     inp_search.send_keys(

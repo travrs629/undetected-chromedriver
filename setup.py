@@ -11,9 +11,11 @@ Y88b.    888  888 888    Y88..88P 888  888  888 Y8b.     Y88b 888 888     888  Y
 
 BY ULTRAFUNKAMSTERDAM (https://github.com/ultrafunkamsterdam)"""
 
+# Provides a collection of enhancements to allow more easily builds and distributes of Python packages.
 from setuptools import setup
 import os
 import re
+# Defines base classes for standard encoders and decoders with internal registries.
 import codecs
 
 
@@ -35,21 +37,25 @@ description = (
     "NOTE: results may vary due to many factors. No guarantees are given, except for ongoing efforts in understanding detection algorithms.",
 )
 
+# Provides configuration for the package.
 setup(
     name="undetected-chromedriver",
     version=version,
     packages=["undetected_chromedriver"],
     install_requires=[
+        # States the required classes for running the project.
         "selenium>=4.0.0",
         "requests",
         "websockets",
     ],
+    # Specify any package data, in this case, it is the 'example/example.py'.
     package_data={"undetected_chromedriver": [os.path.join("example", "example.py")]},
     url="https://github.com/ultrafunkamsterdam/undetected-chromedriver",
     license="GPL-3.0",
     author="UltrafunkAmsterdam",
     author_email="info@blackhat-security.nl",
     description=description,
+    # Uses the README.md as the long description of this package.
     long_description=open(os.path.join(dirname, "README.md"), encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     classifiers=[
